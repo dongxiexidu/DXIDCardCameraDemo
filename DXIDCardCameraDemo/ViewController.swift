@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBAction func frontClick(_ sender: Any) {
         let vc = DXIDCardCameraController.init(type: DXIDCardType.front)
         vc.delegate = self
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
     @IBAction func reverseClick(_ sender: Any) {
         let vc = DXIDCardCameraController.init(type: DXIDCardType.reverse)
         vc.delegate = self
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
     

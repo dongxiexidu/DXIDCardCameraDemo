@@ -13,20 +13,20 @@ extension UIImage {
     
     public func dx_clipImageInRect(rect: CGRect) -> UIImage?{
        
-        let widthScale : CGFloat = self.size.width / kScreenW
-        let heightScale : CGFloat = self.size.height / kScreenH
+        let widthScale: CGFloat = self.size.width / kScreenW
+        let heightScale: CGFloat = self.size.height / kScreenH
         
         //其实是横屏的
-        let originWidth : CGFloat = rect.size.width
-        let originHeight : CGFloat = rect.size.height
+        let originWidth: CGFloat = rect.size.width
+        let originHeight: CGFloat = rect.size.height
         
         
-        let x : CGFloat = (kScreenH - originHeight) * 0.5 * heightScale
-        let y : CGFloat = (kScreenW - originWidth) * 0.5 * widthScale
-        let width : CGFloat = originHeight * heightScale
-        let height : CGFloat = originWidth * widthScale
+        let x: CGFloat = (kScreenH - originHeight) * 0.5 * heightScale
+        let y: CGFloat = (kScreenW - originWidth) * 0.5 * widthScale
+        let width: CGFloat = originHeight * heightScale
+        let height: CGFloat = originWidth * widthScale
         
-        let r : CGRect = CGRect.init(x: x, y: y, width: width, height: height)
+        let r: CGRect = CGRect.init(x: x, y: y, width: width, height: height)
         if let cgImg = self.cgImage?.cropping(to: r) {
             return UIImage.init(cgImage: cgImg, scale: 1.0, orientation: UIImage.Orientation.right)
         }
@@ -36,12 +36,12 @@ extension UIImage {
     
 //    // MARK: 修改图片方向
 //   public func dx_fixImageOrotation(orientation: UIImage.Orientation) -> UIImage? {
-//        var rotate : CGFloat = 0
-//        var rect : CGRect!
-//        var translateX : CGFloat = 0
-//        var translateY : CGFloat = 0
-//        var scaleX : CGFloat = 1.0
-//        var scaleY : CGFloat = 1.0
+//        var rotate: CGFloat = 0
+//        var rect: CGRect!
+//        var translateX: CGFloat = 0
+//        var translateY: CGFloat = 0
+//        var scaleX: CGFloat = 1.0
+//        var scaleY: CGFloat = 1.0
 //        
 //        switch orientation {
 //        case .left:

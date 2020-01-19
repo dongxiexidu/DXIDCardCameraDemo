@@ -252,7 +252,7 @@ extension DXIDCardCameraController {
         
         if let videoConnection = self.imageOutput.connection(with: AVMediaType.video) {
             self.imageOutput.captureStillImageAsynchronously(from: videoConnection) {[weak self] (imageDataSampleBuffer, error) in
-                guard let self = self else {return }
+                guard let self = self else { return }
                 
                 guard let imageDataSampleBuffer = imageDataSampleBuffer else{ return }
                 guard let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer) else{ return }
@@ -261,10 +261,11 @@ extension DXIDCardCameraController {
                 self.image = clipImage
                 self.session.stopRunning()
                 
-                self.imageView = UIImageView.init(frame: self.floatingView.IDCardWindowLayer.frame)
-                self.view.insertSubview(self.imageView!, belowSubview: btn)
-                self.imageView?.layer.masksToBounds = true
-                self.imageView?.image = clipImage
+//                self.imageView = UIImageView.init(frame: self.floatingView.IDCardWindowLayer.frame)
+//                self.imageView?.contentMode = .scaleAspectFit
+//                self.view.insertSubview(self.imageView!, belowSubview: btn)
+//                self.imageView?.layer.masksToBounds = true
+//                self.imageView?.image = clipImage
                 // 隐藏切换取消闪光灯按钮
                 self.cancleButton.isHidden = true
                 self.flashButton.isHidden = true
